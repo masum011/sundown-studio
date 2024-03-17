@@ -1,0 +1,74 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-color: aquamarine;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4em;
+}
+h2 {
+  font-size: 90px;
+  position: relative;
+  cursor: pointer;
+}
+h2::after {
+  content: " ";
+  background-color: black;
+  height: 10px;
+  width: 1%;
+  left: 0;
+  bottom: 0;
+  position: absolute;
+}
+
+h2:hover::after {
+  animation-name: lineanimi;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+@keyframes lineanimi {
+  0% {
+    width: 0%;
+    left: 0%;
+  }
+  50% {
+    width: 100%;
+    left: 0%;
+  }
+  100% {
+    width: 0%;
+    left: 100%;
+  }
+}
+
+.curcle{
+  height: 80vh;
+  width: 40vw;
+  border-radius: 50%;
+  filter: blur(20px);
+  background: linear-gradient(red,blue);
+  animation-name: curcle;
+  animation-duration: 3s;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+
+}
+
+@keyframes curcle {
+  from{
+      transform: translateX(10%) skew(0);
+  }
+  to{
+    transform: translateX(-10%) skew(20deg);
+  }
+}
